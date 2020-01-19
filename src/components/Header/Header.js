@@ -8,7 +8,7 @@ import { ThemeContext } from "../../contexts/themeProvider";
 const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   & > div {
     flex-grow: 2;

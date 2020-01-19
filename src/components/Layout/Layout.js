@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Header from "../Header/Header";
-import CookieNotice from "../CookieNotice/CookieNotice";
 
 const StyledLayout = styled.div`
   padding: 20px;
@@ -20,7 +19,6 @@ const Layout = ({ children }) => {
       <Header />
 
       {children}
-      <CookieNotice />
     </StyledLayout>
   );
 };
