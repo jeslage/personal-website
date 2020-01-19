@@ -1,19 +1,75 @@
-import { Link } from 'gatsby'
+---
+title: Homepage
+path: /
+date: 2019-01-29
+---
 
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
+import Seo from "../components/seo";
+import ProjectItem from "../components/ProjectItem/ProjectItem";
+import ProjectList from "../components/ProjectList/ProjectList";
 
-<SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+<Seo title="Homepage" />
 
-# Hi people
+Hello, I am a Frontend developer based in Hamburg, Germany.
+You can find me on [GitHub](https://github.com/jeslage "GitHub profile") or [NPM](https://www.npmjs.com/~jeslage "NPM profile"). Contact me via [mail](mailto:hello@johanneseslage.de).
 
-Welcome to your new Gatsby site.
+<ProjectList label="Worked on this websites">
+  <ProjectItem
+    link="https://www.umlaut.com"
+    image="umlaut.png"
+    label="Umlaut"
+    color="linear-gradient(to bottom, rgb(255, 220, 0), rgb(212, 1, 21) 20%, rgb(164, 35, 132) 40%, rgb(53, 42, 132) 60%, rgb(0, 153, 147) 87%, rgb(161, 198, 50))"
+  />
+  <ProjectItem
+    link="https://www.futurium.de"
+    image="futurium.png"
+    label="Futurium Berlin"
+    color="rgb(242, 164, 162)"
+  />
+  <ProjectItem
+    link="https://www.pelicanbar.de"
+    image="pelicanbar.png"
+    label="Pelican Bar Hamburg"
+    color="#4abbb7"
+  />
+  <ProjectItem
+    link="http://www.berghuis.de"
+    image="berghuis.png"
+    label="Berghuis Kälberhandel"
+    color="#39be58"
+  />
+</ProjectList>
 
-Now go build something great.
+<ProjectList label="Side Projects">
+  <ProjectItem
+    link="https://lorem-ipsum-generator.johanneseslage.now.sh"
+    image="lorem-ipsum-generator.png"
+    label="Lorem Ipsum Generator"
+    color="#2f2f2f"
+/>
 
-<div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-  <Image />
-</div>
-<Link to="/page-2/">Go to page 2</Link>
+  <ProjectItem
+    link="https://loremipsumgame.netlify.com"
+    image="lorem-ipsum-game.png"
+    label="Lorem Ipsum Game"
+    color="red"
+  />
+  <ProjectItem
+    link="https://shortcut-game.netlify.com"
+    image="shortcut-game.png"
+    label="Shortcut Game"
+    color="#323232"
+  />
+</ProjectList>
 
+<ProjectList label="Open Source">
+  <a
+    href="https://github.com/jeslage/storybook-addon-theme-playground"
+    target="_blank"
+  >
+    Storybook Addon Theme Playground
+  </a>
+  <a href="https://github.com/jeslage/adaptive-modular-scale" target="_blank">
+    Adaptive Modular Scale
+  </a>
+</ProjectList>
