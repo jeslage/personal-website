@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Headline from "../Headline/Headline";
 
 const StyledProjectList = styled.div`
-  margin-bottom: 120px;
+  margin: 120px 0;
 
   .ProjectList__headline {
-    margin: 120px 0 40px;
+    margin: 0 0 40px;
   }
 
   .ProjectList__wrapper {

@@ -37,7 +37,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 { ${ams(2)} }
-  h2 { ${ams(1)} }
+
+  h2 { 
+    ${ams(1)}
+    margin: 40px 0 20px; 
+  }
+
+  h3 {
+    ${ams(1)}
+    margin: 40px 0 20px; 
+  }
 
   p { 
     ${ams(1)}
