@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import GlobalStyle from "../../stylesheets/global";
+
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -17,6 +19,7 @@ const StyledLayout = styled.div`
 const Layout = ({ children }) => {
   return (
     <StyledLayout>
+      <GlobalStyle />
       <Header />
       {children}
       <Footer />
