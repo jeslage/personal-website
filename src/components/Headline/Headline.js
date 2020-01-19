@@ -10,7 +10,7 @@ const StyledHeadline = styled.h2`
   &:after {
     ${ams(1)}
     position: absolute;
-    top: 0;
+    top: 1px;
     font-weight: 100;
   }
 
