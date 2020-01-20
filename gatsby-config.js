@@ -37,17 +37,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-default-mdx-basic",
-        short_name: "starter",
+        name: "Johannes Eslage",
+        short_name: "Johannes Eslage",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#222222",
+        theme_color: "#222222",
         display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png" // This path is relative to the root of the site.
+        icon: "src/images/icon.png"
       }
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    },
+    "gatsby-plugin-offline"
   ]
 };
