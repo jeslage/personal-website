@@ -7,8 +7,7 @@ const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Inter';
   font-weight: 100 900;
-  font-display: swap;
-  font-style: oblique 0deg 10deg;
+  font-display: block;
   src: url(${InterFont}) format("woff2");
 }
 
