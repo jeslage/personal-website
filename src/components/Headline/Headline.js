@@ -5,12 +5,12 @@ import ams from "adaptive-modular-scale";
 const StyledHeadline = styled.h2`
   position: relative;
   text-transform: uppercase;
+  font-weight: 900;
 
   &:before,
   &:after {
     ${ams(1)}
     position: absolute;
-    top: 1px;
     font-weight: 100;
   }
 

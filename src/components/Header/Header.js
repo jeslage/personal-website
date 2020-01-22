@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
     }
 
     h1  {
-      ${ams(1)}
+      font-weight: 900;
       text-transform: uppercase;
     }
   }

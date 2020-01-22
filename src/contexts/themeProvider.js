@@ -62,7 +62,7 @@ const ThemeProvider = ({ children }) => {
             ratio: [1.2, 1.67],
             base: [14, 16],
             width: [375, 1440],
-            breakpoints: 20
+            breakpoints: 10
           },
           ...colors
         }}

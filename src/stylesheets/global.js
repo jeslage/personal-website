@@ -1,7 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 import ams from "adaptive-modular-scale";
 
+import InterFont from "./fonts/inter-variable.woff2";
+
 const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url(${InterFont}) format("woff2");
+}
+
+
   * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 
   html {
@@ -9,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-family: "Inter", Helvetica, Arial, sans-serif; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -25,29 +36,25 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p, a {
     margin:0;
     padding:0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-family: "Inter", Helvetica, Arial, sans-serif; 
   }
 
-  h1 { ${ams(2)} }
+  h1, h2, h3, p, a { ${ams(1)} }
 
   h2 { 
-    ${ams(1)}
     margin: 40px 0 20px; 
   }
 
   h3 {
-    ${ams(1)}
     margin: 40px 0 20px; 
   }
 
   p { 
-    ${ams(1)}
     line-height: 1.5;
     max-width:700px;
   } 
 
   a {
-    ${ams(1)}
     color: inherit;
   }
   

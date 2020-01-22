@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Headline from "../Headline/Headline";
-import adaptiveModularScale from "adaptive-modular-scale";
+import ams from "adaptive-modular-scale";
 import { useEffect } from "react";
 
 const StyledCookieNotice = styled.aside`
@@ -23,7 +23,7 @@ const StyledCookieNotice = styled.aside`
 
   p {
     padding: 20px 0;
-    ${adaptiveModularScale(0)}
+    ${ams(0)}
   }
 
   button {
@@ -36,8 +36,8 @@ const StyledCookieNotice = styled.aside`
     cursor: pointer;
     border: 1px solid ${props => props.theme.background};
     text-transform: uppercase;
-    font-weight: 800;
-    ${adaptiveModularScale(0)}
+    font-weight: 900;
+    ${ams(0)}
 
     &:hover {
       background: ${props => props.theme.background};
