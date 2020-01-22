@@ -21,9 +21,13 @@ const StyledCookieNotice = styled.aside`
     padding: 10px 40px;
   }
 
+  p,
+  button {
+    ${ams(0)}
+  }
+
   p {
     padding: 20px 0;
-    ${ams(0)}
   }
 
   button {
@@ -37,7 +41,6 @@ const StyledCookieNotice = styled.aside`
     border: 1px solid ${props => props.theme.background};
     text-transform: uppercase;
     font-weight: 900;
-    ${ams(0)}
 
     &:hover {
       background: ${props => props.theme.background};

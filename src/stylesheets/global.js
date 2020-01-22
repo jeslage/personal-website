@@ -33,12 +33,11 @@ const GlobalStyle = createGlobalStyle`
   }
   
   h1, h2, h3, h4, h5, h6, p, a {
+    ${ams(1)}
     margin:0;
     padding:0;
     font-family: "Inter", Helvetica, Arial, sans-serif; 
   }
-
-  h1, h2, h3, p, a { ${ams(1)} }
 
   h2 { 
     margin: 40px 0 20px; 

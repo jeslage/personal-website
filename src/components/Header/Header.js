@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
 import React, { useContext } from "react";
-import ams from "adaptive-modular-scale";
 
 import { ThemeContext } from "../../contexts/themeProvider";
 

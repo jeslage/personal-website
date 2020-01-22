@@ -60,7 +60,7 @@ const ThemeProvider = ({ children }) => {
         theme={{
           adaptiveModularScale: {
             ratio: [1.2, 1.67],
-            base: [14, 16],
+            base: [16, 16],
             width: [375, 1440],
             breakpoints: 10
           },
