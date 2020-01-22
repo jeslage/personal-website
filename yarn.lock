@@ -1696,10 +1696,10 @@ acorn@^6.0.7:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-adaptive-modular-scale@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/adaptive-modular-scale/-/adaptive-modular-scale-1.0.1.tgz#aeda25f931aa8fd6885e4c2a559272e3608906a5"
-  integrity sha512-eyvrOyFKt/GIzIDcdXThYF3bkep8VQq1chZbydfcyiKM0A9NEqRhu9h5V1hrmbnq5RpKVNLITZMgTM2BJVofOA==
+adaptive-modular-scale@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/adaptive-modular-scale/-/adaptive-modular-scale-1.1.1.tgz#5cb8f8353d9e000b1aa64e6099df45544dc2115f"
+  integrity sha512-YyzxbfGg5r9fG9Zp7PU6nZwz6fGxngIhrMseC3yHPI/5mo5pNrSpr+HpmfdEGIJ/Pl3H0XYJKfCGfhE8/4maOw==
 
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
