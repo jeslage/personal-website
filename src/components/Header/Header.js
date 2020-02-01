@@ -34,16 +34,16 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-  const { toggleDarkMode } = useContext(ThemeContext);
+  const { toggleColorTheme } = useContext(ThemeContext);
 
   return (
     <StyledHeader>
       <div>
         <Link to="/">
-          <h1>Johannes Eslage</h1>
+          <h1>BRNC JR.</h1>
         </Link>
       </div>
-      <button title="Dark Mode" onClick={toggleDarkMode}>
+      <button title="Dark Mode" onClick={toggleColorTheme}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"

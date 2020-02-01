@@ -5,55 +5,29 @@ import { ThemeProvider as StyledComponentsThemeProvider } from "styled-component
 export const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => setDarkMode(prev => !prev);
+  const [colorTheme, setColorTheme] = useState(0);
 
-  useEffect(() => setColorScheme(), []);
+  const colors = [
+    { color: "#f4f4f4", background: "#222" },
+    { color: "#fbe9a0", background: "#00135c" },
+    { color: "#4f313f", background: "#b3d1c3" },
+    { color: "#222", background: "#f4f4f4" },
+    { color: "#edc5b5", background: "#153d4d" },
+    { color: "#203f7b", background: "#e3c387" }
+  ];
 
-  useEffect(() => window.localStorage.setItem("darkMode", darkMode), [
-    darkMode
-  ]);
-
-  const colors = darkMode
-    ? { color: "#f4f4f4", background: "#222" }
-    : { color: "#222", background: "#f4f4f4" };
-
-  const setColorScheme = () => {
-    const { matchMedia, localStorage } = window;
-
-    const scheme = mode => `(prefers-color-scheme: ${mode})`;
-
-    const isSet = localStorage.getItem("darkMode");
-    const isDark = matchMedia(scheme("dark")).matches;
-    const isLight = matchMedia(scheme("light")).matches;
-    const isUnknown = matchMedia(scheme("no-reference")).matches;
-    const noSupport = !isDark && !isLight && !isUnknown;
-
-    if (isSet) {
-      setDarkMode(isSet === "true");
-      return;
-    }
-
-    if (isDark) setDarkMode(true);
-    if (isLight) setDarkMode(false);
-
-    if (isUnknown || noSupport) {
-      const now = new Date();
-      const hour = now.getHours();
-
-      if (hour < 4 || hour >= 16) {
-        setDarkMode(true);
-      } else {
-        setDarkMode(false);
-      }
+  const toggleColorTheme = () => {
+    if (colorTheme + 1 <= colors.length - 1) {
+      setColorTheme(prev => prev + 1);
+    } else {
+      setColorTheme(0);
     }
   };
 
   return (
     <ThemeContext.Provider
       value={{
-        darkMode,
-        toggleDarkMode
+        toggleColorTheme
       }}
     >
       <StyledComponentsThemeProvider
@@ -64,7 +38,7 @@ const ThemeProvider = ({ children }) => {
             width: [375, 1440],
             breakpoints: 10
           },
-          ...colors
+          ...colors[colorTheme]
         }}
       >
         {children}
