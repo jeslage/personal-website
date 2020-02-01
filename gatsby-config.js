@@ -2,10 +2,9 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "Johannes Eslage",
-    description:
-      "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
-    author: "@chrisbiscardi"
+    title: "BRNC JR.",
+    description: "Frontend Developer based in Hamburg, Germany.",
+    author: "Johannes Eslage"
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -37,8 +36,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Johannes Eslage",
-        short_name: "Johannes Eslage",
+        name: "BRNC JR.",
+        short_name: "BRNC JR.",
         start_url: "/",
         background_color: "#222222",
         theme_color: "#222222",
