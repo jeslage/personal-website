@@ -1,0 +1,74 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.3
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+      # build
+      - run:
+          name: Compile gatsbyjs site
+          command: yarn build
+
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - public
+
+  deploy:
+    docker:
+      - image: circleci/node:8.9.3
+
+    working_directory: ~/repo
+
+    steps:
+      - attach_workspace:
+          at: ./
+      - add_ssh_keys
+      - run:
+          name: known_hosts sadness
+          command: ssh-keyscan -H $SITE_SSH_HOST >> ~/.ssh/known_hosts
+      - run:
+          name: remove existing files
+          command: ssh "$SITE_SSH_USER@$SITE_SSH_HOST" "rm -rf /var/www/httpdocs/$PROD_URL/*"
+      - run:
+          name: scp files
+          command: scp -r public "$SITE_SSH_USER@$SITE_SSH_HOST:/var/www/httpdocs/$PROD_URL/"
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - build
