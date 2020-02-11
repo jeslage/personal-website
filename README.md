@@ -2,4 +2,5 @@
 
 ```sh
 yarn develop
+yarn build
 ```
