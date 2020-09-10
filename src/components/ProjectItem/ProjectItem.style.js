@@ -6,7 +6,7 @@ const StyledProjectItem = styled.div`
     overflow: hidden;
     height: 0;
     padding-top: calc((300 / 400) * 100%);
-    background: ${props => props.color};
+    background: ${(props) => props.color};
   }
 
   .ProjectItem__image {
@@ -17,8 +17,26 @@ const StyledProjectItem = styled.div`
     max-width: 80%;
     transform: translate(-50%, -50%);
     height: auto;
-    box-shadow: 0px 20px 20px -15px rgba(0, 0, 0, 0.25);
-    transition: max-width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0px 20px 20px -15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: "";
+      transition: opacity 0.4s ease-in-out;
+      background: linear-gradient(
+        27deg,
+        rgba(255, 255, 255, 0.01) 0%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0.01) 100%
+      );
+      opacity: 0;
+      z-index: 1;
+    }
   }
 
   p {
@@ -50,6 +68,17 @@ const StyledProjectItem = styled.div`
 
   a:hover {
     text-decoration: underline;
+
+    .ProjectItem__image {
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) perspective(1000px) rotateX(10deg)
+        scale(1.05);
+      box-shadow: 0px 20px 20px -5px rgba(0, 0, 0, 0.2);
+
+      &:before {
+        opacity: 1;
+      }
+    }
   }
 `;
 

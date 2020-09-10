@@ -48,9 +48,11 @@ const ProjectItem = ({ link, image, label, color }) => {
               <Img fluid={currentImage.node.childImageSharp.fluid} />
             </div>
           </div>
+
           {label && (
             <p>
               {label}
+
               {isExternal && (
                 <span>
                   <svg
